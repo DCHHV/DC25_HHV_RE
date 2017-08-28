@@ -1,0 +1,86 @@
+This document is a writeup of the DEF CON 25 HHV Reverse Engineering Challenge.
+NOTE THAT THERE ARE SPOILERS IN HERE!
+
+As noted in the instructions, there are two challenges; to derive the
+schematic from the PCB and assemble the board, and then discover the function
+of the device and how to unlock it.
+
+In contrast to the DC24 RE Challenge, this year saw only a single main
+challenge.  The idea of this year was to mimic a more real-world device.
+Thus, the final PCB and firmware had some very naive ways to keep people out.
+
+The goal:
+The goal of the device is to unlock it, either via the button input or the
+serial interface.  
+
+Startup:
+At startup, there is a very long 12 second delay while the uC goes through a
+"startup" routine and initializes all functions.  This is entirely for show,
+but is also intended to reduce brute-force attacks.  There are messages that
+are output on the serial connection during this time, just to show the player
+that there is activity on that pin and it might be important.  Additionally
+there is a red herring, the version number that is printed is exactly the 
+correct amount of digits to input on the button interface as a proper code.
+If this sequence is entered, there is a small easter egg.
+
+Buttons:
+There are four buttons on the front of the unit labeled 1 - 4, each wired to a
+single ADC input on the microcontroller (a PIC12F1572) using a simple resistor
+ladder configuration.  When no buttons are pressed, the ADC pin sees 3 V on it.
+When any other buttons are pressed the ADC pin will see less than that
+(depending on the button).  These are just polled at some rate with an internal
+timer in the PIC.  The button input is designed to accept 8 digits.  Once
+the correct combination is entered, the green LED will turn solid.  There is 
+then a challenge sequence that can be entered to "relock" the device. Every
+incorrect sequence of 8 button presses results in 10 seconds of the red LED
+blinking.  This limits brute forcing.
+
+Serial:
+The serial interface is very simple, it is a 9600 baud TX/RX (no flow control)
+setup.  At startup, there is some output on the TX side to indicate that there
+is a serial interface.  The serial interface is brought out to the edge of the 
+PCB on four round test pads.  The RX line is run through a non-populated SMD
+resistor package, in an attempt to limit user interaction with the PIC.
+There is a very simple command parser that was designed to be robust.  It will
+only accept a max of 8 bytes, followed by a newline.  Any bytes after 8 that 
+are not a newline sequence are simply dropped.  The "help" command exists, and
+lists some other simple commands.  The "debug" command says that "listing of
+debug commands is disabled" hinting toward an active command that could be used
+to get the device to do what the player wants.
+
+The Answers:
+The main button input combination is 33124121, with the challenge sequence being
+41241342.  On the serial console, the command "unlockit" will unlock the device
+and turn the green LED on.  Additionally, in this state, the challenge sequence
+will still correctly lock the device again, as will the command "lockit" on the
+serial interface.
+
+The Methods:
+There are 4 methods that have been "built in" that can be used to derive the ways
+to unlock the device.
+
+Brute forcing the button input is possible, but lengthy.  My original math
+showed an "average" of 7 hours of brute forcing.  However after the con I was
+contacted by a player pointed out that the time is actually much longer due to
+a keyspace miscalculation on my part.  Oops.
+
+However, an exaggerated side channel timing attack exists within he button input
+method.  If the compared byte is incorrect, then the compare function ends
+instantly.  For each correctly matched input in the sequence, there is a 1 ms
+delay after the compare.  On even the slowest of logic analyzers this pattern 
+should be very easy to spot.  The delay time is from the blinking of the green
+LED ack'ing a button press to the red LED blinking a failure.
+
+The PIC had its code unprotected.  This means the code could be dumped and 
+disassembled.  There was no effort to obfuscate the assembled code from the
+original C.  However, the button inputs and stored sequence compares were all
+done as ASCII, which is just different.  This could also be used to locate the
+serial commands needed.
+
+The serial interface can be brute forced much faster than the button inputs can.
+While 9600 baud is slow, there still is no timeout like is imposed on the button
+inputs.  This allows a dictionary attack against the serial port (or random
+brute force) to complete much faster.  However, the instructions are worded to
+attempt to tell the user to "unlock" the device, hopefully allowing for educated
+guesses.
+

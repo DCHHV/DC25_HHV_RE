@@ -7,8 +7,9 @@ This repo contains all of the sources, eagle files, and gerbers for the DEF CON 
 
 Do not go any further than this if you do not wish to see spoilers.  The eagle/ folder has all of the PCB files in it, the gerbers or .brd file can be sent off to a fab house to create a PCB if you wish to re-create the challenge yourself.  The .hex file in the top folder is the binary blob that can be programmed in to the microcontroller.
 
+Writeup available in docs/writeup.txt
+
 To do:
-- Create writeup
 - Create BOM
 
 
