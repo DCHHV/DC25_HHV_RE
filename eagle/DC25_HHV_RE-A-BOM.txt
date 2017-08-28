@@ -1,0 +1,11 @@
+Partlist exported from /home/karl/my_codes/DC25_HHV_RE/eagle/DC25_HHV_RE-A.sch at 28 Aug 2017 13:11:10
+
+Qty Value           Device          Package         Parts              Description                
+1   .1uF            C-EU050-024X044 C050-024X044    C1                 CAPACITOR, European symbol 
+2   100             R-US_0207/10    0207/10         R5, R6             RESISTOR, American symbol  
+4   10k             R-US_0207/10    0207/10         R1, R2, R3, R4     RESISTOR, American symbol  
+4   B3F-10XX        10-XX           B3F-10XX        S1, S2, S3, S4     OMRON SWITCH               
+1   BAT-HLD-001-THM BAT-HLD-001-THM BAT-HLD-001-THM BT1                                           
+1   PIC12F1571      PIC12F1571      DIL8            U1                 PIC12F1571/2               
+1   Green           LED5MM          LED5MM          LED1               LED                        
+1   Red             LED5MM          LED5MM          LED2               LED                        

@@ -6644,34 +6644,34 @@ Please make sure your boards conform to these design rules.</description>
 <elements>
 <element name="U1" library="cuslibrary" package="DIL8" value="PIC12F1571" x="29.21" y="18.542" rot="R270"/>
 <element name="C1" library="rcl" package="C050-024X044" value=".1uF" x="29.21" y="26.162"/>
-<element name="S1" library="switch-omron" package="B3F-10XX" value="0" x="7.62" y="5.08" rot="R180">
+<element name="S1" library="switch-omron" package="B3F-10XX" value="B3F-10XX" x="7.62" y="5.08" rot="R180">
 <attribute name="OC_NEWARK" value="36M3542" x="7.62" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="7.62" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="" x="7.62" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_FARNELL" value="176432" x="7.62" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="S2" library="switch-omron" package="B3F-10XX" value="1" x="20.32" y="5.08" rot="R180">
+<element name="S2" library="switch-omron" package="B3F-10XX" value="B3F-10XX" x="20.32" y="5.08" rot="R180">
 <attribute name="OC_NEWARK" value="36M3542" x="20.32" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="20.32" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="" x="20.32" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_FARNELL" value="176432" x="20.32" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="S3" library="switch-omron" package="B3F-10XX" value="2" x="33.02" y="5.08" rot="R180">
+<element name="S3" library="switch-omron" package="B3F-10XX" value="B3F-10XX" x="33.02" y="5.08" rot="R180">
 <attribute name="OC_NEWARK" value="36M3542" x="33.02" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="33.02" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="" x="33.02" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_FARNELL" value="176432" x="33.02" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="S4" library="switch-omron" package="B3F-10XX" value="3" x="45.72" y="5.08" rot="R180">
+<element name="S4" library="switch-omron" package="B3F-10XX" value="B3F-10XX" x="45.72" y="5.08" rot="R180">
 <attribute name="OC_NEWARK" value="36M3542" x="45.72" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MPN" value="B3F-1000" x="45.72" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="" x="45.72" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_FARNELL" value="176432" x="45.72" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="R2" library="rcl" package="0207/10" value="" x="20.32" y="10.16" rot="R180"/>
-<element name="R3" library="rcl" package="0207/10" value="" x="33.02" y="10.16" rot="R180"/>
-<element name="R4" library="rcl" package="0207/10" value="" x="45.72" y="10.16" rot="R180"/>
-<element name="R1" library="rcl" package="0207/10" value="" x="7.62" y="10.16" rot="R180"/>
+<element name="R2" library="rcl" package="0207/10" value="10k" x="20.32" y="10.16" rot="R180"/>
+<element name="R3" library="rcl" package="0207/10" value="10k" x="33.02" y="10.16" rot="R180"/>
+<element name="R4" library="rcl" package="0207/10" value="10k" x="45.72" y="10.16" rot="R180"/>
+<element name="R1" library="rcl" package="0207/10" value="10k" x="7.62" y="10.16" rot="R180"/>
 <element name="R5" library="rcl" package="0207/10" value="100" x="8.89" y="18.288" rot="R270"/>
 <element name="TP1" library="testpad" package="TP13R" value="TPTP13R" x="2.032" y="24.892" rot="R180">
 <attribute name="TP_SIGNAL_NAME" value="" x="2.032" y="24.892" size="1.778" layer="27" rot="R180" display="off"/>

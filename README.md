@@ -9,9 +9,7 @@ Do not go any further than this if you do not wish to see spoilers.  The eagle/ 
 
 Writeup available in docs/writeup.txt
 
-To do:
-- Create BOM
-
+BOM available in eagle/DC25_HHV_RE-A-BOM.txt
 
 ## Instructions
 

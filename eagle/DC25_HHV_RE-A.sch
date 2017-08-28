@@ -8395,14 +8395,14 @@ Source: www.kingbright.com</description>
 <part name="VSS1" library="supply1" deviceset="VSS" device=""/>
 <part name="C1" library="rcl" deviceset="C-EU" device="050-024X044" value=".1uF"/>
 <part name="VSS2" library="supply1" deviceset="VSS" device=""/>
-<part name="S1" library="switch-omron" deviceset="10-XX" device="" value="0"/>
-<part name="S2" library="switch-omron" deviceset="10-XX" device="" value="1"/>
-<part name="S3" library="switch-omron" deviceset="10-XX" device="" value="2"/>
-<part name="S4" library="switch-omron" deviceset="10-XX" device="" value="3"/>
-<part name="R2" library="rcl" deviceset="R-US_" device="0207/10"/>
-<part name="R3" library="rcl" deviceset="R-US_" device="0207/10"/>
-<part name="R4" library="rcl" deviceset="R-US_" device="0207/10"/>
-<part name="R1" library="rcl" deviceset="R-US_" device="0207/10"/>
+<part name="S1" library="switch-omron" deviceset="10-XX" device="" value="B3F-10XX"/>
+<part name="S2" library="switch-omron" deviceset="10-XX" device="" value="B3F-10XX"/>
+<part name="S3" library="switch-omron" deviceset="10-XX" device="" value="B3F-10XX"/>
+<part name="S4" library="switch-omron" deviceset="10-XX" device="" value="B3F-10XX"/>
+<part name="R2" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
+<part name="R3" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
+<part name="R4" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
+<part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
 <part name="VSS3" library="supply1" deviceset="VSS" device=""/>
 <part name="VSS4" library="supply1" deviceset="VSS" device=""/>
 <part name="VSS5" library="supply1" deviceset="VSS" device=""/>
