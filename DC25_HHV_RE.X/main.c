@@ -206,11 +206,13 @@ void parsecmd(void)
         }
 
         if (!strcmp(cmdstring, "lockit")) {
+            LATA |= (uint8_t)(1 << LED_G);
             unlocked = 0;
             did_something = 1;
         }
         
         if (!strcmp(cmdstring, "unlockit")) {
+            LATA &= ~(uint8_t)(1 << LED_G);
             unlocked = 1;
             did_something = 1;
         }
